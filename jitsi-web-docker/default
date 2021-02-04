@@ -2,7 +2,11 @@ server {
         listen 80 default_server;
         listen [::]:80 default_server;
 
-
+        location ^~ /hello/ {
+         default_type "text/plain";
+         return 200  "Running";
+        }
+         
         include /config/nginx/meet.conf;
 
 }
